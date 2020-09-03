@@ -8,22 +8,30 @@ function writePassword() {
 
   passwordText.value = password;
 }
-
+  var letterArray = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+  var numberArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+  var characterArray = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")"];
+  var passwordLetter =letterArray[Math.floor(Math.random() * password.length)];
+  var passwordNumber = 
+  var passwordCharacter;
 function generatePassword() {
   var password = [];
-  var length = prompt(
-    "How many characters long do you want your password to be?"
-  );
-  if (length < 8 || length > 128) {
-    alert("Your password must be between 8 and 128 characters long.");
-    length;
-  } else var letters = confirm("Do you want your password to contain letters?");
-  if (letters === true){
-    console.log("a");
-  } else var numbers = confirm("Do you want your password to contain numbers?");
-  var specialCharacters = confirm(
-    "Do you want your password to contain special characters?"
-  );
+  var length = prompt("How many characters long do you want your password to be?");
+  if (length <= 8 || length >= 128) {
+  alert("Your password must be between 8 and 128 characters long.");
+  }
+  password.length = length;
+  console.log(length);
+  var letters = confirm("Do you want your password to contain letters?");
+  password.push("a");
+  console.log(password);
+  var numbers = confirm("Do you want your password to contain numbers?");
+  password.push(1);
+  console.log(password);
+  var specialCharacters = confirm("Do you want your password to contain special characters?");
+  password.push("!");
+  console.log(password);
+
 
   //Ask the user for password length
   //ask the user if they want letters
@@ -42,9 +50,7 @@ function generatePassword() {
   // GIVEN I need a new, secure password
   //          List of 'nouns'
   //prompt.writePassword("Please choose your password length.");
-  //var letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-  //var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
-  //var characters = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")"];
+
   // WHEN I click the button to generate a password
   //          Code button to trigger prompt series
   // THEN I am presented with a series of prompts for password criteria
