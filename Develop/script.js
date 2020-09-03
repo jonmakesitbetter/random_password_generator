@@ -23,13 +23,16 @@ function generatePassword() {
   password.length = length;
   console.log(length);
   var letters = confirm("Do you want your password to contain letters?");
-  password.push("a");
+  var passwordLetters = letterArray[Math.floor(Math.random() * password.length)];
+  password.push(passwordLetters);
   console.log(password);
   var numbers = confirm("Do you want your password to contain numbers?");
-  password.push(1);
+  var passwordNumbers = numberArray[Math.floor(Math.random() * password.length)];
+  password.push(passwordNumbers);
   console.log(password);
   var specialCharacters = confirm("Do you want your password to contain special characters?");
-  password.push("!");
+  var passwordCharacters = characterArray[Math.floor(Math.random() * password.length)];
+  password.push(passwordCharacters);
   console.log(password);
 
 
