@@ -8,7 +8,35 @@ function writePassword() {
 
   passwordText.value = password;
 }
-var letterArray = [
+var upperCaseArray = [
+  "A",
+  "B",
+  "C",
+  "D",
+  "E",
+  "F",
+  "G",
+  "H",
+  "I",
+  "J",
+  "K",
+  "L",
+  "M",
+  "N",
+  "O",
+  "P",
+  "Q",
+  "R",
+  "S",
+  "T",
+  "U",
+  "V",
+  "W",
+  "X",
+  "Y",
+  "Z",
+];
+var lowerCaseArray = [
   "a",
   "b",
   "c",
@@ -36,25 +64,8 @@ var letterArray = [
   "y",
   "z",
 ];
-
-
-  // //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! Oh, wait! If I put the randomizer into a for loop, it'll keep pushing to the end of the array until the array is as long as the user specified... and
-  // I’ll just tell you about that line. Password is an empty array that the time. Meaning the length is 0. Then you tell it hey your length is now 10… or whatever number the user provides. And javascript says ok my length is now 10, but give me the 10 items when you’re ready. Then you push on 3 characters which makes it 13.
-
-
-
-
-
-  // 10:14
-  // But you have to generate the right amount of characters because now it only generates one character each for letters numbers and the other scenario
-  
-  // Jonathan Peach  10:15 PM
-  // Could I put letterArray[Math.floor(Math.random().numberArray[Math.floor(Math.random()specialCharacterArray[Math.floor(Math.random() * password.length ?
-  // 10:15
-  // Make one big thing of it within a for loop?
-
-var numberArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
-var characterArray = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")"];
+var numberArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+var characterArray = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")"];
 function generatePassword() {
   var password = [];
   var length = prompt(
@@ -66,23 +77,28 @@ function generatePassword() {
   password.length = length - length;
   console.log(length);
   var letters = confirm("Do you want your password to contain letters?");
-  if (letters === true){
+  if (letters === true) {
     var passwordLetters =
-      letterArray[Math.floor(Math.random() * password.length)];
-  password.push(passwordLetters);
-  console.log(password);}
+      lowerCaseArray[Math.floor(Math.random() * password.length)];
+    password.push(passwordLetters);
+    console.log(password);
+  }
   var numbers = confirm("Do you want your password to contain numbers?");
-  if (numbers === true){
+  if (numbers === true) {
     var passwordNumbers =
       numberArray[Math.floor(Math.random() * password.length)];
-  password.push(passwordNumbers);
-  console.log(password);}
-  var specialCharacters = confirm("Do you want your password to contain special characters?");
-    if (specialCharacters === true){
-  var passwordCharacters =
-    characterArray[Math.floor(Math.random() * password.length)];
-  password.push(passwordCharacters);
-  console.log(password);}
+    password.push(passwordNumbers);
+    console.log(password);
+  }
+  var specialCharacters = confirm(
+    "Do you want your password to contain special characters?"
+  );
+  if (specialCharacters === true) {
+    var passwordCharacters =
+      characterArray[Math.floor(Math.random() * password.length)];
+    password.push(passwordCharacters);
+    console.log(password);
+  }
 
   //Ask the user for password length
   //ask the user if they want letters
