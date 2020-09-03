@@ -8,33 +8,65 @@ function writePassword() {
 
   passwordText.value = password;
 }
-  var letterArray = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-  var numberArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
-  var characterArray = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")"];
-  var passwordLetters = letterArray[Math.floor(Math.random() * password.length)];
-  var passwordNumbers = numberArray[Math.floor(Math.random() * password.length)];
-  var passwordCharacters = characterArray[Math.floor(Math.random() * password.length)];
+var letterArray = [
+  "a",
+  "b",
+  "c",
+  "d",
+  "e",
+  "f",
+  "g",
+  "h",
+  "i",
+  "j",
+  "k",
+  "l",
+  "m",
+  "n",
+  "o",
+  "p",
+  "q",
+  "r",
+  "s",
+  "t",
+  "u",
+  "v",
+  "w",
+  "x",
+  "y",
+  "z",
+];
+var numberArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+var characterArray = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")"];
 function generatePassword() {
   var password = [];
-  var length = prompt("How many characters long do you want your password to be?");
+  var length = prompt(
+    "How many characters long do you want your password to be?"
+  );
   if (length <= 8 || length >= 128) {
-  alert("Your password must be between 8 and 128 characters long.");
+    alert("Your password must be between 8 and 128 characters long.");
   }
   password.length = length;
   console.log(length);
   var letters = confirm("Do you want your password to contain letters?");
-  var passwordLetters = letterArray[Math.floor(Math.random() * password.length)];
+  if (letters === true)
+    var passwordLetters =
+      letterArray[Math.floor(Math.random() * password.length)];
   password.push(passwordLetters);
   console.log(password);
   var numbers = confirm("Do you want your password to contain numbers?");
-  var passwordNumbers = numberArray[Math.floor(Math.random() * password.length)];
+  if ((numbers = true))
+    var passwordNumbers =
+      numberArray[Math.floor(Math.random() * password.length)];
   password.push(passwordNumbers);
   console.log(password);
-  var specialCharacters = confirm("Do you want your password to contain special characters?");
-  var passwordCharacters = characterArray[Math.floor(Math.random() * password.length)];
+  var specialCharacters = confirm(
+    "Do you want your password to contain special characters?"
+  );
+  var passwordCharacters =
+    characterArray[Math.floor(Math.random() * password.length)];
   password.push(passwordCharacters);
   console.log(password);
-
 
   //Ask the user for password length
   //ask the user if they want letters
@@ -51,23 +83,12 @@ function generatePassword() {
 
   // ALL YOUR CODE GOES HERE
   // GIVEN I need a new, secure password
-  //          List of 'nouns'
-  //prompt.writePassword("Please choose your password length.");
-
   // WHEN I click the button to generate a password
-  //          Code button to trigger prompt series
   // THEN I am presented with a series of prompts for password criteria
-  //          Prompt series start
-
-  //prompt("Would you like your password to include letters?")
-
   // WHEN prompted for password criteria
   // THEN I select which criteria to include in the password
-  //          Need arrays of numbers, characters, and letters, then random character generator.
   // WHEN prompted for the length of the password
-  //          Prompt asking for character length. Set a if (password.length) >= 128 || <=8 {prompt("Your password must contain between 8 and 128 characters") and re-prompt for length;}
   // THEN I choose a length of at least 8 characters and no more than 128 characters
-  //          Input character number, console.log(whateverTheyPutIn); Then run it through for loop that number of times for generators of selected types
   // WHEN prompted for character types to include in the password
   //          Need confirm for each type - number, character, and letter, to contain only true boolean response type.
   //          confirm.character("Do you want your password to contain special characters?") confirm.letters() confirm.numbers() End in an else { "Your password must contain something!"" and return to original prompt };
