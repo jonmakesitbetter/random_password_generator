@@ -11,9 +11,9 @@ function writePassword() {
   var letterArray = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
   var numberArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
   var characterArray = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")"];
-  var passwordLetter =letterArray[Math.floor(Math.random() * password.length)];
-  var passwordNumber = 
-  var passwordCharacter;
+  var passwordLetters = letterArray[Math.floor(Math.random() * password.length)];
+  var passwordNumbers = numberArray[Math.floor(Math.random() * password.length)];
+  var passwordCharacters = characterArray[Math.floor(Math.random() * password.length)];
 function generatePassword() {
   var password = [];
   var length = prompt("How many characters long do you want your password to be?");
