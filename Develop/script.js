@@ -83,10 +83,7 @@ var lowerCaseArray = [
 var numberArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
 var characterArray = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")"];
 var passwordOptions = [];
-/*
-*Here we begin the function that starts the user's experience. Had to move the variable "password" to within the function because it
-was causing the password to write one letter.
-*/
+
 function generatePassword() {
   var password = "";
   passwordOptions = [];
