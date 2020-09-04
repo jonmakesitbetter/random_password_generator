@@ -111,16 +111,20 @@ function generatePassword() {
 
   if (capitalLetters === true) {
     passwordOptions.push(...upperCaseArray);
-  } else if (lowerCaseLetters === true) {
+  }
+  if (lowerCaseLetters === true) {
     passwordOptions.push(...lowerCaseArray);
-  } else if (numbers === true) {
+  }
+  if (numbers === true) {
     passwordOptions.push(...numberArray);
-  } else if (specialCharacters === true) {
+  }
+  if (specialCharacters === true) {
     passwordOptions.push(...characterArray);
-    else {
+  }
+  if (capitalLetters === false && lowerCaseLetters === false && numbers === false && specialCharacters === false){
       alert("Your password must contain characters!");
       generatePassword();
-    }
+    
   }
   for (var i = 0; i < length; i++) {
     password = password + passwordOptions[Math.floor(Math.random() * passwordOptions.length)];
@@ -128,4 +132,5 @@ function generatePassword() {
   console.log(password);
   return password;
 }
+
 generateBtn.addEventListener("click", writePassword);
