@@ -29,27 +29,30 @@ function generatePassword() {
   var specialCharacters = confirm("Do you want your password to contain special characters?");
 
   if (capitalLetters === true) {
-      passwordOptions.push(upperCaseArray);
+      passwordOptions.push(...upperCaseArray);
   }
   if (lowerCaseLetters === true) {
-      passwordOptions.push(lowerCaseArray);
+      passwordOptions.push(...owerCaseArray);
 }
   if (numbers === true) {
-      passwordOptions.push(numberArray);
+      passwordOptions.push(...numberArray);
   }
   if (specialCharacters === true) {
-      passwordOptions.push(characterArray);
+      passwordOptions.push(...characterArray);
 
-      if (capitalLetters !== true && lowerCaseLetters !== true && numbers !== true && specialCharacters !== true){
-        alert("Your password must contain characters!");
-        writePassword();
-      }
- console.log(passwordOptions);
+      // if (capitalLetters == false && lowerCaseLetters == false && numbers == false && specialCharacters == false){
+      //   alert("Your password must contain characters!");
+      //   writePassword();
+      // }
+
   }
   //lowerCaseArray[Math.floor(Math.random() * password.length)]; === example code for randomizer
-
+for (var i = 0; i < length; i++) {
+  password = passwordOptions[Math.floor(Math.random() * length)];
+}
 
   return password.join("");
+  console.log(password);
 }
   // Add event listener to generate button
 
@@ -72,15 +75,3 @@ function generatePassword() {
 
 
 generateBtn.addEventListener("click", writePassword);
-
-// if (tagName !== "h1" && tagName !== "h2" && tagName !== "p" && tagName !== "div") {
-//   alert("please enter a valid tag");
-// } else {
-//   var tag = document.createElement(tagName);
-//   tag.textContent = "This was made via prompts. It's a " + tagName;
-//   document.body.appendChild(tag);
-
-
-//   for (var i = 0; i < length i++){
-//     if (i == password.length()){
-      //THEN STOP DOING THAT
