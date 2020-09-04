@@ -64,8 +64,71 @@ var lowerCaseArray = [
   "y",
   "z",
 ];
-var numberArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
-var characterArray = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")"];
+var numberArray = [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  0,
+];
+var characterArray = [
+  "!",
+  "@",
+  "#",
+  "$",
+  "%",
+  "^",
+  "&",
+  "*",
+  "(",
+  ")",
+  "!",
+  "@",
+  "#",
+  "$",
+  "%",
+  "^",
+  "&",
+  "*",
+  "(",
+  ")",
+  "!",
+  "@",
+  "#",
+  "$",
+  "%",
+  "^",
+  "&",
+  "*",
+  "(",
+  ")",
+];
+var passwordOptions = [];
 function generatePassword() {
   var password = [];
   var length = prompt(
@@ -73,8 +136,8 @@ function generatePassword() {
   );
   if (length <= 8 || length >= 128) {
     alert("Your password must be between 8 and 128 characters long.");
-  }
-  password.length = length - length;
+  } else generatePassword();
+
   console.log(length);
   var letters = confirm("Do you want your password to contain letters?");
   if (letters === true) {
@@ -100,14 +163,7 @@ function generatePassword() {
     console.log(password);
   }
 
-  //Ask the user for password length
-  //ask the user if they want letters
-  //ask if they want numbers
-  //ask if they want special characters
 
-  //After each ask, put into the password that we will return, 1 of those types of characters if they want it.
-
-  //after that, keep adding to the password array until it's the right length.
 
   return password.join("");
 
@@ -137,3 +193,17 @@ function generatePassword() {
 }
 
 generateBtn.addEventListener("click", writePassword);
+
+if (tagName !== "h1" && tagName !== "h2" && tagName !== "p" && tagName !== "div") {
+  alert("please enter a valid tag");
+} else {
+  var tag = document.createElement(tagName);
+  tag.textContent = "This was made via prompts. It's a " + tagName;
+  document.body.appendChild(tag);
+
+
+  for (var i = 0; i < length i++){
+    if (i == password.length()){
+      //THEN STOP DOING THAT
+    }
+  }
