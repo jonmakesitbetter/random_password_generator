@@ -8,6 +8,22 @@ function writePassword() {
 
   passwordText.value = password;
 }
+// ALL MY CODE GOES HERE, 
+// GIVEN I need a new, secure password
+// WHEN I click the button to generate a password
+// THEN I am presented with a series of prompts for password criteria
+// WHEN prompted for password criteria
+// THEN I select which criteria to include in the password
+// WHEN prompted for the length of the password
+// THEN I choose a length of at least 8 characters and no more than 128 characters
+// WHEN prompted for character types to include in the password
+// THEN I choose lowercase, uppercase, numeric, and/or special characters
+// WHEN I answer each prompt
+// THEN my input should be validated and at least one character type should be selected
+// WHEN all prompts are answered
+// THEN a password is generated that matches the selected criteria
+// WHEN the password is generated
+// THEN the password is either displayed in an alert or written to the page
 var upperCaseArray = [
   "A",
   "B",
@@ -67,7 +83,10 @@ var lowerCaseArray = [
 var numberArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
 var characterArray = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")"];
 var passwordOptions = [];
-
+/*
+*Here we begin the function that starts the user's experience. Had to move the variable "password" to within the function because it
+was causing the password to write one letter.
+*/
 function generatePassword() {
   var password = "";
   passwordOptions = [];
@@ -92,45 +111,21 @@ function generatePassword() {
 
   if (capitalLetters === true) {
     passwordOptions.push(...upperCaseArray);
-  }
-  if (lowerCaseLetters === true) {
+  } else if (lowerCaseLetters === true) {
     passwordOptions.push(...lowerCaseArray);
-  }
-  if (numbers === true) {
+  } else if (numbers === true) {
     passwordOptions.push(...numberArray);
-  }
-  if (specialCharacters === true) {
+  } else if (specialCharacters === true) {
     passwordOptions.push(...characterArray);
-
-    // if (capitalLetters == false && lowerCaseLetters == false && numbers == false && specialCharacters == false){
-    //   alert("Your password must contain characters!");
-    //   writePassword();
-    // }
+    else {
+      alert("Your password must contain characters!");
+      generatePassword();
+    }
   }
-  //lowerCaseArray[Math.floor(Math.random() * password.length)]; === example code for randomizer
   for (var i = 0; i < length; i++) {
     password = password + passwordOptions[Math.floor(Math.random() * passwordOptions.length)];
   }
   console.log(password);
   return password;
 }
-// Add event listener to generate button
-
-// ALL YOUR CODE GOES HERE
-// GIVEN I need a new, secure password
-// WHEN I click the button to generate a password
-// THEN I am presented with a series of prompts for password criteria
-// WHEN prompted for password criteria
-// THEN I select which criteria to include in the password
-// WHEN prompted for the length of the password
-// THEN I choose a length of at least 8 characters and no more than 128 characters
-// WHEN prompted for character types to include in the password
-// THEN I choose lowercase, uppercase, numeric, and/or special characters
-// WHEN I answer each prompt
-// THEN my input should be validated and at least one character type should be selected
-// WHEN all prompts are answered
-// THEN a password is generated that matches the selected criteria
-// WHEN the password is generated
-// THEN the password is either displayed in an alert or written to the page
-
 generateBtn.addEventListener("click", writePassword);
